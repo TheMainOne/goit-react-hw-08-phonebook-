@@ -10,7 +10,6 @@ export const UserMenu = () => {
     {name && <img src={'http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/alien_7_2.png'} alt="avatar" width="32" />}
       <span>Добро пожаловать, {name}</span>
       <button type="button" onClick={() => {
-        console.log('logout');
         dispatch(operations.logOut())
       }}>
         Выйти

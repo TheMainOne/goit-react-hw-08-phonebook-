@@ -33,7 +33,6 @@ export const Phonebook = () => {
                   toast.error(`${name} is already in phonebook`);
                   return;
               }
-              
 
               if (name !== '' && number !== '') {
                   dispatch(addContact(contact));

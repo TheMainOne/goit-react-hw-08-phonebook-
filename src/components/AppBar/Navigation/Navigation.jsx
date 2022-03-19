@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+// import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { AuthNav } from "../Auth-nav/Auth-nav";
 import { MainNav } from "../Main-nav/Main-nav";
 import { Navigate } from "./Navigation.styled";

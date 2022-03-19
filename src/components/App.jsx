@@ -9,7 +9,7 @@ import { Container } from "./GlobalStyles";
 import { Login } from "./Login/Login";
 import Layout from "./Layout/Layout";
 import { Phonebook } from "./Phonebook/Phonebook";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
+// import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const App = () => {
   return (

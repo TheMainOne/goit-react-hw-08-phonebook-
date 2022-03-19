@@ -4,7 +4,6 @@ import operations from "./auth-operations";
 const initialState = {
   user: { name: null, email: null },
   token: null,
-  contacts: [],
   isLoggedIn: false,
   isFetchingCurrentUser: false,
 };

@@ -1,18 +1,17 @@
 import axios from "axios";
 import {
-  //   addContactsError,
-  //   addContactsSuccess,
-  //   addContactsRequest,
+  addContactsError,
+  addContactsSuccess,
+  addContactsRequest,
   fetchContactsRequest,
   fetchContactsSuccess,
   fetchContactsError,
-  //   deleteContactsRequest,
-  //   deleteContactsError,
-  //   deleteContactsSuccess,
+  deleteContactsRequest,
+  deleteContactsError,
+  deleteContactsSuccess,
   //   changeFilter,
 } from "./contacts-actions";
 
-// GET @ /tasks
 export const fetchContacts = () => async (dispatch) => {
   dispatch(fetchContactsRequest());
 
@@ -25,46 +24,20 @@ export const fetchContacts = () => async (dispatch) => {
   }
 };
 
-// // POST @ /tasks
-// const addTodo = (description) => (dispatch) => {
-//   const todo = {
-//     description,
-//     completed: false,
-//   };
+export const addContact = (description) => (dispatch) => {
+  dispatch(addContactsRequest());
 
-//   dispatch(addTodoRequest());
+  axios
+    .post("/contacts", description)
+    .then(({ data }) => dispatch(addContactsSuccess(data)))
+    .catch((error) => dispatch(addContactsError(error.message)));
+};
 
-//   axios
-//     .post("/tasks", todo)
-//     .then(({ data }) => dispatch(addTodoSuccess(data)))
-//     .catch((error) => dispatch(addTodoError(error.message)));
-// };
+export const deleteContact = (contactId) => (dispatch) => {
+  dispatch(deleteContactsRequest());
 
-// // DELETE @ /tasks/:id
-// const deleteTodo = (todoId) => (dispatch) => {
-//   dispatch(deleteTodoRequest());
-
-//   axios
-//     .delete(`/tasks/${todoId}`)
-//     .then(() => dispatch(deleteTodoSuccess(todoId)))
-//     .catch((error) => dispatch(deleteTodoError(error.message)));
-// };
-
-// // PATCH @ /tasks/:id
-// const toggleCompleted =
-//   ({ id, completed }) =>
-//   (dispatch) => {
-//     const update = { completed };
-
-//     dispatch(toggleCompletedRequest());
-
-//     axios
-//       .patch(`/tasks/${id}`, update)
-//       .then(({ data }) => dispatch(toggleCompletedSuccess(data)))
-//       .catch((error) => dispatch(toggleCompletedError(error.message)));
-//   };
-
-// const todosOperations = {
-//   fetchContacts,
-// };
-// export default todosOperations;
+  axios
+    .delete(`/contacts/${contactId}`)
+    .then(() => dispatch(deleteContactsSuccess(contactId)))
+    .catch((error) => dispatch(deleteContactsError(error.message)));
+};

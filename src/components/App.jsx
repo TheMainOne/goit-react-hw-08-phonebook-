@@ -20,14 +20,22 @@ export const App = () => {
       <Suspense fallback="" />
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={
-          <PublicRoute>
-<Layout />
-          </PublicRoute>}>
-          <Route path="/" element={
+        <Route
+          path="/"
+          element={
             <PublicRoute>
-<h1>Welcome to our phonebook app</h1>
-            </PublicRoute>} />
+              <Layout />
+            </PublicRoute>
+          }
+        >
+          <Route
+            path="/"
+            element={
+              <PublicRoute>
+                <h1>Welcome to our phonebook app</h1>
+              </PublicRoute>
+            }
+          />
           <Route
             path="phonebook"
             element={
@@ -36,16 +44,24 @@ export const App = () => {
               </PrivateRoute>
             }
           />
-          <Route path="register" element={
-            <PublicRoute redirectTo={`/phonebook`}>
-              <Registration />
-            </PublicRoute>} />
-          <Route path="login" element={
-            <PublicRoute redirectTo={`/phonebook`} restricted>
-<Login />
-            </PublicRoute>} />
+          <Route
+            path="register"
+            element={
+              <PublicRoute redirectTo={`/phonebook`}>
+                <Registration />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <PublicRoute redirectTo={`/phonebook`} restricted>
+                <Login />
+              </PublicRoute>
+            }
+          />
         </Route>
       </Routes>
-    </Container> 
+    </Container>
   );
 };

@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "redux/store/contacts/contacts-operations";
 import { addContact } from "redux/store/contacts/contacts-operations";
 import { ContactListItem } from "./ContactItem";
+import Button from '@mui/material/Button';
+
 
 export const Phonebook = () => {
   const dispatch = useDispatch();
@@ -46,8 +48,8 @@ export const Phonebook = () => {
         <label>
           Number
           <input type="phone" name="number" />
-        </label>
-        <button type="submit">add contact</button>
+              </label>
+              <Button variant="contained" type="submit">add contact</Button>
       </form>}   
 
     </>

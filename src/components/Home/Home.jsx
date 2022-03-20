@@ -22,7 +22,7 @@ export const Home = () => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Phone Card
+            State standarts for phone network
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quas quia laudantium nobis assumenda inventore numquam dolores similique, quis possimus dolore commodi nisi fuga suscipit illo facilis pariatur. Voluptate, fugit.
@@ -43,8 +43,8 @@ export const Home = () => {
             A new era of phone calls 
           </Typography>
           <Typography variant="body2" color="text.secondary">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta enim non repudiandae, maxime ut dolor!
-        </Typography>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempora error praesentium eligendi suscipit accusantium, nam dicta quaerat laborum eveniet, iste nulla alias nemo laboriosam.
+                        </Typography>
         </CardContent >
       </CardActionArea>
             </Card>

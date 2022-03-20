@@ -4,7 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "redux/store/contacts/contacts-operations";
 import { addContact } from "redux/store/contacts/contacts-operations";
 import { ContactListItem } from "./ContactItem";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+
 
 
 export const Phonebook = () => {
@@ -16,41 +20,47 @@ export const Phonebook = () => {
 
   return (
       <>
-          <ul>
-                 {contacts &&
-                  isLoggedIn && contacts.map(contact => <ContactListItem key={contact.id} {...contact} />)}     
-                                   </ul>
-       {isLoggedIn && <form onSubmit={(event) => {
-              event.preventDefault()
-              const name = event.target.elements.text.value.trim();
-              const number = event.target.elements.number.value.trim();
-              const filterName = contacts.filter(contact => contact.name === name);
-              const contact = {
-                  name,
-                  number,
-              }
+          {isLoggedIn && <Box
+                  component="form"
+                  sx={{
+                      '& > :not(style)': { m: 1, width: '25ch' },
+                  }}
+                  noValidate
+                  autoComplete="off"
+                  onSubmit={(event) => {
+                      event.preventDefault()
+                      const name = event.target.elements.text.value.trim();
+                      const number = event.target.elements.number.value.trim();
+                      const filterName = contacts.filter(contact => contact.name === name);
+                      const contact = {
+                          name,
+                          number,
+                      }
 
-              if (filterName.length > 0) {
-                  toast.error(`${name} is already in phonebook`);
-                  return;
-              }
+                      if (filterName.length > 0) {
+                          toast.error(`${name} is already in phonebook`);
+                          return;
+                      }
 
-              if (name !== '' && number !== '') {
-                  dispatch(addContact(contact));
-              }
-          }}>
-              <p>Please add a new contact here</p>
-        <label>
-          Name
-          <input type="text" name="text" />
-        </label>
-        <label>
-          Number
-          <input type="phone" name="number" />
-              </label>
-              <Button variant="contained" type="submit">add contact</Button>
-      </form>}   
+                      if (name !== '' && number !== '') {
+                          dispatch(addContact(contact));
+                          toast.success(`${name} has been successfully added to phonebook`);
 
+                      }
+                  }}
+    >
+        <TextField type='text' name='text' label="Name" variant="outlined"/>
+      <TextField type='phone' name='number' label="Number" variant="outlined"/>
+              <Button type="submit" variant="contained" style={{ height: 55 }}>Add contact</Button>
+    </Box>}   
+          <List
+      sx={{ width: '100%', maxWidth: 360 }}
+      aria-label="contacts"
+          >
+           {contacts &&
+                  isLoggedIn && contacts.map(contact => <ContactListItem key={contact.id} {...contact} />)}   
+    </List>     
+         
     </>
   );
 };

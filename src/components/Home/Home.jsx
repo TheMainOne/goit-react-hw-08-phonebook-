@@ -8,7 +8,6 @@ import { CardList } from './Home.styled';
 
 
 export const Home = () => {
-
     return (<>
         <HomeTitle>Welcome to our phonebook app!</HomeTitle>
         <CardList>
@@ -44,7 +43,7 @@ export const Home = () => {
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempora error praesentium eligendi suscipit accusantium, nam dicta quaerat laborum eveniet, iste nulla alias nemo laboriosam.
-                        </Typography>
+        </Typography>
         </CardContent >
       </CardActionArea>
             </Card>

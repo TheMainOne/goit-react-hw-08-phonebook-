@@ -45,7 +45,7 @@ const Registration = () => {
         autoComplete="off"
         onSubmit={handleSubmit}
         >
-          <TextField id="outlined-basic" type='text' name='name' value={name} label="Email" variant="outlined" onChange={handleChange}/>
+          <TextField id="outlined-basic" type='text' name='name' value={name} label="Name" variant="outlined" onChange={handleChange}/>
         <TextField id="outlined-basic" type='email' name='email' value={email} label="Email" variant="outlined" onChange={handleChange}/>
       <TextField id="outlined-basic" type='text' name='password' value={password} label="Password" variant="outlined" onChange={handleChange}/>
       <Button type="submit" variant="contained" style={{height: 55}}>Sign up</Button>

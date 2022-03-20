@@ -40,7 +40,6 @@ export const Login = () => {
   return (
     <div>
       <LoginTitle>Sign in</LoginTitle>
-
        <Box
       component="form"
       sx={{
@@ -50,8 +49,8 @@ export const Login = () => {
         autoComplete="off"
         onSubmit={handleSubmit}
     >
-        <TextField id="outlined-basic" type='email' name='email' value={email} label="Email" variant="outlined" onChange={handleChange}/>
-      <TextField id="outlined-basic" type='email' name='password' value={password} label="Password" variant="outlined" onChange={handleChange}/>
+        <TextField type='email' name='email' value={email} label="Email" variant="outlined" onChange={handleChange}/>
+      <TextField type='password' name='password' value={password} label="Password" variant="outlined" onChange={handleChange}/>
       <Button type="submit" variant="contained" style={{height: 55}}>Enter</Button>
 
     </Box>

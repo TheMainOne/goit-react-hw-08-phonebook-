@@ -100,7 +100,7 @@ const ResponsiveAppBar = () => {
             ) : (
               <>
                 <Link to={"/login"} style={{ marginRight: 10 }}>
-                  LOGIN
+                  LOG IN
                 </Link>
                 <Link to={"/register"} style={{ marginRight: 10 }}>
                   REGISTRATION

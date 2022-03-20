@@ -16,7 +16,6 @@ export const App = () => {
   return (
     <Container>
       <Toaster />
-      {/* <AppBar /> */}
       <ResponsiveAppBar/>
       <Suspense fallback="" />
       <GlobalStyle />

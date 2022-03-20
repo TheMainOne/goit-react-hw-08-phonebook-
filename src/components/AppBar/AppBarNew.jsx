@@ -115,7 +115,7 @@ const ResponsiveAppBar = () => {
                 {isLoggedIn ? (
                   <Avatar
                     alt="avatar"
-                    src="https://cdn.pixabay.com/photo/2020/06/29/20/31/man-5354308_1280.png"
+                    src="https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_1280.png"
                   />
                 ) : (
                   <Avatar alt="Remy Sharp" src="" />

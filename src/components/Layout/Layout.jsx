@@ -1,13 +1,14 @@
 import { Outlet } from 'react-router-dom';
 import { Container } from 'components/GlobalStyles';
+import { MainContainer } from './Layout.styled';
 
 const Layout = () => {
   return (
-    <main>
+    <MainContainer>
       <Container>
         <Outlet />
       </Container>
-    </main>
+    </MainContainer>
   );
 };
 

@@ -1,13 +1,16 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux";
 import operations from "redux/store/auth/auth-operations";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { RegistrationTitle } from "./Registration.styled";
 
 const Registration = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
 
       const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -32,23 +35,21 @@ const Registration = () => {
 
     return (
         <>
-        <h2>Registration page</h2>
-        <p>Please sign up to get access to phonebook services</p>
-            <form onSubmit={handleSubmit} autoComplete='off'>
-                                <label>
-                    Name
-                    <input type='text' name="name" value={name} onChange={handleChange}/>
-                </label>
-                <label>
-                    Email
-                    <input type='email' name="email" value={email} onChange={handleChange}/>
-                </label>
-                <label>
-                    Password
-                    <input type='password' name="password"  value={password} onChange={handleChange}/>
-                </label>
-                <button>submit</button>
-        </form>
+        <RegistrationTitle>Please sign up to get access to the phonebook services</RegistrationTitle>
+               <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        >
+          <TextField id="outlined-basic" type='text' name='name' value={name} label="Email" variant="outlined" onChange={handleChange}/>
+        <TextField id="outlined-basic" type='email' name='email' value={email} label="Email" variant="outlined" onChange={handleChange}/>
+      <TextField id="outlined-basic" type='text' name='password' value={password} label="Password" variant="outlined" onChange={handleChange}/>
+      <Button type="submit" variant="contained" style={{height: 55}}>Sign up</Button>
+    </Box>
         </>
     )
 }

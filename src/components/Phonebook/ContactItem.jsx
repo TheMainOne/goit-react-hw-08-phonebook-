@@ -1,7 +1,10 @@
 // import toast from "react-hot-toast";
 import { deleteContact } from "redux/store/contacts/contacts-operations";
 import { useDispatch } from "react-redux";
-import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import { ListItem } from "./ContactItem.styled";
 
 
 export const ContactListItem = ({ id, name, number }) => {
@@ -9,17 +12,15 @@ export const ContactListItem = ({ id, name, number }) => {
   const onDeleteContact = (id) => dispatch(deleteContact(id));
 
   return (
-    <li>
+    <ListItem>
       <p>
         {name} : {number}
       </p>
-      <Button variant="contained"
-        onClick={() => {
-          onDeleteContact(id);
-        }}
-      >
-        delete
-      </Button>
-    </li>
+       <Tooltip title="Delete" onClick={() => onDeleteContact(id)}>
+      <IconButton>
+        <DeleteIcon />
+      </IconButton>
+    </Tooltip>
+    </ListItem>
   );
 };

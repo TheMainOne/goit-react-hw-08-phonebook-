@@ -2,7 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import { GlobalStyle } from "./GlobalStyles";
-import AppBar from "./AppBar/AppBar";
+// import AppBar from "./AppBar/AppBar";
+import ResponsiveAppBar from "./AppBar/AppBarNew";
 import Registration from "./Registration/Registration";
 import { Container } from "./GlobalStyles";
 import { Login } from "./Login/Login";
@@ -15,8 +16,8 @@ export const App = () => {
   return (
     <Container>
       <Toaster />
-      <AppBar />
-      <hr />
+      {/* <AppBar /> */}
+      <ResponsiveAppBar/>
       <Suspense fallback="" />
       <GlobalStyle />
       <Routes>

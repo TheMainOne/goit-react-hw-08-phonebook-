@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import operations from 'redux/store/auth/auth-operations';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -29,29 +33,20 @@ export const Login = () => {
     <div>
       <h2>Login page</h2>
 
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <label>
-          Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+       <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+        autoComplete="off"
+        onSubmit={handleSubmit}
+    >
+      <TextField id="outlined-basic" type='email' name='email' value={email} label="Email" variant="outlined" onChange={handleChange} />
+      <TextField id="outlined-basic" type='email' name='password' value={password} label="Password" variant="outlined" onChange={handleChange}/>
+      <Button type="submit" variant="contained">Войти</Button>
 
-        <label>
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <button type="submit">Войти</button>
-      </form>
+    </Box>
     </div>
   );
 }

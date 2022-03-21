@@ -10,7 +10,8 @@ import Layout from "./Layout/Layout";
 import { Phonebook } from "./Phonebook/Phonebook";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import PublicRoute from "./Phonebook/PublicRoute/PublicRoute";
-import {Home} from './Home/Home'
+import { Home } from './Home/Home'
+import Footer from "./Footer/Footer";
 
 export const App = () => {
   return (
@@ -62,6 +63,7 @@ export const App = () => {
           />
         </Route>
       </Routes>
+      <Footer title={'Phonebook'}/>
     </Container>
   );
 };

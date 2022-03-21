@@ -52,7 +52,8 @@ export const Phonebook = () => {
         <TextField type='text' name='text' label="Name" variant="outlined"/>
       <TextField type='phone' name='number' label="Number" variant="outlined"/>
               <Button type="submit" variant="contained" style={{ height: 55 }}>Add contact</Button>
-    </Box>}   
+          </Box>}   
+                  <TextField id="standard-basic" label="Filter" variant="standard" />
           <List
       sx={{ width: '100%', maxWidth: 360 }}
       aria-label="contacts"

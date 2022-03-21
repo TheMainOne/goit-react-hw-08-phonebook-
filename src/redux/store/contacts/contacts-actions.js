@@ -20,12 +20,4 @@ export const deleteContactsSuccess = createAction(
 );
 export const deleteContactsError = createAction("contacts/deleteContactsError");
 
-// export const toggleCompletedRequest = createAction(
-//   "todos/toggleCompletedRequest"
-// );
-// export const toggleCompletedSuccess = createAction(
-//   "todos/toggleCompletedSuccess"
-// );
-// export const toggleCompletedError = createAction("todos/toggleCompletedError");
-
 export const changeFilter = createAction("todos/changeFilter");

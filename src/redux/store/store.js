@@ -13,6 +13,7 @@ import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import storage from "redux-persist/lib/storage";
 import authSlice from "./auth/auth-slice";
 import { contacts } from "./contacts/contacts-reducer";
+import { mySliceFilter } from "./Filter/FilterSlice";
 
 const authPersistConfig = {
   key: "auth",
@@ -25,6 +26,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authSlice),
     contacts,
+    filter: mySliceFilter.reducer,
   },
   middleware: getDefaultMiddleware({
     serializableCheck: {

@@ -139,7 +139,14 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={() => dispatch(operations.logOut())}>
+                <MenuItem key={setting} onClick={() => {
+
+                  if (!isLoggedIn) {
+                    return;
+                  }
+
+                  dispatch(operations.logOut())
+                }}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

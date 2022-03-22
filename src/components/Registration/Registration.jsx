@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 import operations from "redux/store/auth/auth-operations";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -26,7 +27,12 @@ const Registration = () => {
       };
     
     const handleSubmit = (event) => {
-        event.preventDefault();
+      event.preventDefault();
+      
+      if (name === '' || email === '' || password === '') {
+        toast.error('Please fill out all required fields');
+        return;
+      }
         dispatch(operations.register({ name, email, password }));
         setName('');
         setEmail('');

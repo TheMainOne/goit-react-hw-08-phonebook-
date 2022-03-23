@@ -118,7 +118,7 @@ const ResponsiveAppBar = () => {
                     src="https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425_1280.png"
                   />
                 ) : (
-                  <Avatar alt="Remy Sharp" src="" />
+                  <Avatar alt="avatar" src="" />
                 )}
               </IconButton>
             </Tooltip>
@@ -138,7 +138,7 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-  {settings.map((setting) => (
+               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={() => {
 
                   if (!isLoggedIn) {

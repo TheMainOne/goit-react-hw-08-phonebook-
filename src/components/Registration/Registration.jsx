@@ -81,7 +81,7 @@ const Registration = () => {
         />
         <TextField
           id="outlined-basic"
-          type="text"
+          type="password"
           name="password"
           value={password}
           label="Password"
